@@ -9,12 +9,12 @@ import java.util.Scanner;
 public class RNG {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
+        user.input = s.nextLine();
+        Scanner r = new Random();
         
         System.out.println("What game mode?\nEasy\nMedium\nHard");
-        String.mode
+        String mode = (userinput);
         
-        int maximum;
-        if(mode.equals(
         
     }
 }
