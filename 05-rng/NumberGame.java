@@ -16,19 +16,19 @@ public class NumberGame
 
         System.out.println("What mode do you want?\nEasy\nMedium\nHard");
         String mode = s.nextLine();
-
+        
         int maximum;
         if(mode.equals("Easy")) {
-          maximum = 10;
+          maximum = 1;
         } // end if statement
         else if (mode.equals("Medium")) {
-          maximum = 50;
+          maximum = 5;
         } // end else if statement
         else {
-          maximum = 100;
+          maximum = 10;
         } // end else statement
 
-        int mysteryNumber = r.nextInt(maximum) + 1; // place-holder for now
+        int mysteryNumber = r.nextInt((maximum)*10)+1; // place-holder for now
         System.out.println(mysteryNumber);
 
         System.out.print("Enter your guess: ");
@@ -43,13 +43,18 @@ public class NumberGame
             // if the player didn't guess too low (meaning, incorrect and too high!)
             else {
                 System.out.println("You were off by " + (playerGuess - mysteryNumber));
+                System.out.println("Want to try again?\nYes\nNo");
+                String ans = s.nextLine();
+                if (ans.equals("Yes")) {
+                    
+                }
             } // end inner else statement
         } // end outer if statement
         // if the player didn't guess incorrectly (meaning, correct guess)
         else {
             System.out.println("Correct!!!");
         } // end outer else statement
-
+        
         s.close();
     } // end main method
 } // end class
