@@ -1,10 +1,12 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class UserName {
   public static void main(String[] args) {
     // create Scanner object
     Scanner s = new Scanner(System.in);
-
+    Random r = new Random();
+    
     // get String input from user
     System.out.print("Enter your first name: ");
     String firstName = s.nextLine();
@@ -18,17 +20,24 @@ public class UserName {
     
     System.out.println("Are you a student or a teacher?\nStudent\nTeacher");
     String mode = s.nextLine();
-    System.out.println("What is your email before the @?");
-    String respond = s.nextLine();
+    mode = mode.toLowerCase();
+    if (mode.equals("student")) {
+        System.out.println("Student Email: " + firstName + initialize(lastName) + favNum + "@nycstudents.net");
+    }//end of yes response if method
+    else {
+        System.out.println("Teacher Email: " + initialize(firstName) + lastName + favNum + "@schools.nyc.gov");
+    }//end of no response else method
     
-    if (mode.equals("Student")) {
-        System.out.println("Student Email: " + respond + "@nycstudents.net");
-        
+    System.out.println("Do you want the computer to get a random password?\nYes\nNo");
+    String res = s.nextLine();
+    res = res.toLowerCase();
+    if (res.equals("yes")) {
+        int pass = r.nextInt(10+1);
+        System.out.println("Pass: " + pass);
     }
     else {
-        System.out.println("Teacher Email: " + respond + "@schools.nyc.gov");
+    System.out.println("Thank you for replying to this prompt! :D");
     }
-    
     s.close();
   } // end main method
 
