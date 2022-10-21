@@ -66,16 +66,7 @@ public class UserName {
     password = password + c1 + c2 + c3;
     }
     return password;
+    
     }
-    // need a loop of len "length"
     
-    // pull a random number from range (65-90 CAPS) (48-57 #s) (97-122 lower)
-
-    // convert int to char (c =(char)i;)
-
-    // append char to the String password (password = password + c)
-    
-    //int rand = (int)(Math.random() * (90-65+1)+65);
-    //int rand = (int)(Math.random() * (57-48+1)+48);
-    //int rand = (int)(Math.random() * (122-97+1)+97);
   }// end class
