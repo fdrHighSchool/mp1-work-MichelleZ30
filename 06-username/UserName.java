@@ -28,12 +28,11 @@ public class UserName {
         System.out.println("Teacher Email: " + initialize(firstName) + lastName + favNum + "@schools.nyc.gov");
     }//end of no response else method
     
-    System.out.println("Do you want the computer to get a random password?\nYes\nNo");
+    System.out.println("Do you want the computer to genarate a random password?\nYes\nNo");
     String res = s.nextLine();
     res = res.toLowerCase();
     if (res.equals("yes")) {
-        int pass = r.nextInt(10+1);
-        System.out.println("Pass: " + pass);
+        System.out.println(generatePassword(8));
     }
     else {
     System.out.println("Thank you for replying to this prompt! :D");
@@ -50,5 +49,33 @@ public class UserName {
   public static String initialize(String n) {
     return n.substring(0, 1);
   } // end initialize method
+  
+   public static String generatePassword(int length) {
+    String password = "";
+    
+    for (int i = 0; i<length; i++) {
+    int rand1 = (int)(Math.random() * (90-65+1) + 65); 
+    char c1 = (char)rand1;
+    
+    int rand2 = (int)(Math.random() * (57-48+1)+48);
+    char c2 = (char)rand2;
+    
+    int rand3 = (int)(Math.random() * (122-97+1)+97);
+    char c3 = (char)rand3;
+    
+    password = password + c1 + c2 + c3;
+    }
+    return password;
+    }
+    // need a loop of len "length"
+    
+    // pull a random number from range (65-90 CAPS) (48-57 #s) (97-122 lower)
 
-} // end class
+    // convert int to char (c =(char)i;)
+
+    // append char to the String password (password = password + c)
+    
+    //int rand = (int)(Math.random() * (90-65+1)+65);
+    //int rand = (int)(Math.random() * (57-48+1)+48);
+    //int rand = (int)(Math.random() * (122-97+1)+97);
+  }// end class
